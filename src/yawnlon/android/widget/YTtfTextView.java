@@ -9,6 +9,8 @@ import android.widget.TextView;
 import yawnlon.android.R;
 
 public class YTtfTextView extends TextView {
+
+	// TODO: xml中导入字体还不支持
 	private String ttfPath; // ttf字体文件位置，需放置在assets目录下
 	private String ttfPath_B; // ttf粗体字体文件位置，需放置在assets目录下
 
@@ -24,6 +26,8 @@ public class YTtfTextView extends TextView {
 		ttfPath = typeArray.getString(R.styleable.YTtfTextView_font_path);
 		ttfPath_B = typeArray.getString(R.styleable.YTtfTextView_font_path_b);
 		typeArray.recycle();
+		// setTtf(getTypeface() == null ? Typeface.NORMAL :
+		// getTypeface().getStyle());
 	}
 
 	public YTtfTextView(Context context) {
@@ -40,7 +44,7 @@ public class YTtfTextView extends TextView {
 		if (ttfPath == null) {
 			return;
 		}
-		setTtf(getTypeface().getStyle());
+		setTtf(getTypeface() == null ? Typeface.NORMAL : getTypeface().getStyle());
 	}
 
 	public void setTypeface(Typeface tf) {
@@ -67,4 +71,6 @@ public class YTtfTextView extends TextView {
 			super.setTypeface(Typeface.createFromAsset(getContext().getAssets(), ttfPath));
 		}
 	}
+
+	
 }
