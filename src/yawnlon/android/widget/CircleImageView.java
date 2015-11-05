@@ -1,7 +1,3 @@
-/**
- * Alipay.com Inc.
- * Copyright (c) 2004-2014 All Rights Reserved.
- */
 package yawnlon.android.widget;
 
 
@@ -23,11 +19,6 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import yawnlon.android.R;
 
-/**
- * 
- * @author fengdi.wfd
- * @version $Id: MYCircleImageView.java, v 0.1 2014-11-26 下午04:50:16 fengdi.wfd Exp $
- */
 public class CircleImageView extends ImageView {
 
     private static final ScaleType     SCALE_TYPE              = ScaleType.CENTER_CROP;
